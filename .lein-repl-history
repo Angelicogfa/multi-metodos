@@ -1,0 +1,14 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDq9LWN4knP+FOS8m14M59Q2pzuAgrta10MOKYkMC7MJ7dHwadw/bF4OF5t9mVSzb3/73eAKKY8nrIIqZB0XO/W0qedMhVl0RislGZNetdPf2QqKdudOJBGaJyGy20esVZU0kU9xkQ5z44c+9oN7mFQbTV+Xkg79lD4zwX5NKIKhK1rSDy0qrcmBK6AK4XsK2wZDnwE+DB+iONSCpHPZ6qejeAfkVSox1BLWVpXrFQUO1XqWhjN9Ni+V34l+LMJJF3nf+Ml4XUXBFJNOWInJvItjSCw4D2/APbaDiR1E0ohJATzl6FFHp1pHvAo8zdbxh/Bkcs+Y288I5K2C+Nvy+TaWNt4LnGa6lqs7JKFguV6nt0rcSOp58YdzMAXRfnSOPI2oo/akdO4v2Fd3GvfJARlX8qPEeS6tXUeL1Ed05ZjThZaZAN0PUIaWIKBgvtb1zSZy3OQ1atTGmekJWcgfm3QYkZnB/n050IbvNDvCCu3CSBB2+ZX9GtYSnX+NByDcHzmvjNP/imhQkSLha7ji1xaBN4DYPKBmqSUpCH8B7QOh7MpoZav5AxRSmYVpbX33nWJG35PrU5OVyTiuvQcuTOkpkew9zEtfYQG05hkVb5UjegZBURgTCGqXOhbzRqQmIhajO/T5hum9O5hsfQRzoS0N99BRjHE9XbcjY693TZXWQ== guilherme.angelico@invillia.com
+(defmulti run (fn [ctx]
+                (:tipo ctx)))
+(defmethod run "notificacao" [ctx]
+  (println "Enviando notificacao"))
+(defmethod run "email" [ctx]
+  (println "Enviando email"))
+(defmulti run (fn [ctx]
+                (:tipo ctx)))
+(defmethod run "email" [ctx]
+  (println "Enviando email"))
+(defmethod run "notificacao" [ctx]
+  (println "Enviando notificacao"))
+(run {:tipo "email"})
