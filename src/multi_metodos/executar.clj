@@ -1,4 +1,3 @@
 (ns multi-metodos.executar)
 
-(defmulti run (fn [ctx]
-                (:tipo ctx)))
+(defmulti run :tipo)
